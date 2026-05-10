@@ -1,0 +1,32 @@
+src/components/pricing-report/landing/why-it-pays.tsx
+  s_1e262685ad2f20::t_f52b2fe3bc0803 1-30
+src/components/pricing-report/landing/hero.tsx
+  s_1e262685ad2f20::t_2afb6078174538 1-29
+src/components/pricing-report/landing/report-preview.tsx
+  s_1e262685ad2f20::t_e080b58a9069c7 1-61
+src/components/pricing-report/landing/offer-card.tsx
+  s_1e262685ad2f20::t_11a29d82ddc43d 1-67
+src/components/pricing-report/landing/how-it-works.tsx
+  s_1e262685ad2f20::t_a17675f5287171 1-36
+src/components/pricing-report/landing/faq.tsx
+  s_1e262685ad2f20::t_6ab125eb3f4d84 1-30,32-42
+  s_1e262685ad2f20::t_e9f04fb1594d76 31
+src/components/pricing-report/landing/active-subscription-bar.tsx
+  s_1e262685ad2f20::t_4022653140b657 1-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "14d98b42cb3ccdc7f26c45027fa4ad41a76eb4e4",
+  "prompts": {},
+  "sessions": {
+    "s_1e262685ad2f20": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "721bb572-2c21-41e5-9311-544660f6e2d8",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "r00bertos1 <robertos19998@gmail.com>"
+    }
+  }
+}
