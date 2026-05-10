@@ -1,0 +1,19 @@
+src/components/pricing-report/export-menu.tsx
+  s_1e262685ad2f20::t_d49843ecd60ad3 48-52
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "5d8eb865cbeadf5474d267e24cff776cae3a184c",
+  "prompts": {},
+  "sessions": {
+    "s_1e262685ad2f20": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "721bb572-2c21-41e5-9311-544660f6e2d8",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "r00bertos1 <robertos19998@gmail.com>"
+    }
+  }
+}
