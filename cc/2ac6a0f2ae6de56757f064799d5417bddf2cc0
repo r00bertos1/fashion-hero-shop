@@ -1,0 +1,22 @@
+src/components/pricing-report/banner.tsx
+  s_1e262685ad2f20::t_0b5c9a3dff9b67 1-30
+src/app/account/page.tsx
+  s_1e262685ad2f20::t_654f97a9d09bec 7
+  s_1e262685ad2f20::t_c90d46b239f47e 36-37
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "cc2ac6a0f2ae6de56757f064799d5417bddf2cc0",
+  "prompts": {},
+  "sessions": {
+    "s_1e262685ad2f20": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "721bb572-2c21-41e5-9311-544660f6e2d8",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "r00bertos1 <robertos19998@gmail.com>"
+    }
+  }
+}
