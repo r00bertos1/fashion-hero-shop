@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { Shell } from "@/components/shell";
+import { SubscriptionProvider } from "@/lib/pricing-report/subscription-provider";
+import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
 const geist = Geist({
@@ -22,7 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
-        <Shell>{children}</Shell>
+        <SubscriptionProvider>
+          <Shell>{children}</Shell>
+          <Toaster richColors position="top-right" />
+        </SubscriptionProvider>
       </body>
     </html>
   );
