@@ -1,0 +1,25 @@
+.gitignore
+  s_d0c7f8e0a02e17::t_6c622a5ca46166 46-48
+docs/superpowers/specs/2026-05-10-pricing-report-demo-design.md
+  s_d0c7f8e0a02e17::t_7703464935a1b8 115
+  s_d0c7f8e0a02e17::t_8cc8dcdfa63401 104
+  s_d0c7f8e0a02e17::t_d8a29c899a2aab 1-103,105-114,116-210,213-349,351-368
+  s_d0c7f8e0a02e17::t_d6f0ae4ba340e8 211-212
+  s_d0c7f8e0a02e17::t_3e0c93fce43e24 350
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "14897752ae459c4790843b69d72ff83a73b6f589",
+  "prompts": {},
+  "sessions": {
+    "s_d0c7f8e0a02e17": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f7b2ca3-9cd6-4cb3-98fd-ede16407c8fb",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "r00bertos1 <robertos19998@gmail.com>"
+    }
+  }
+}
