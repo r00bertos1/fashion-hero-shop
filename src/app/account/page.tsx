@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useAuth } from "@/components/auth-provider";
+import { PricingReportBanner } from "@/components/pricing-report/banner";
 
 const mockOrders = [
   { id: "SF-10042", date: "March 15, 2026", status: "Delivered", total: 592 },
@@ -31,6 +32,8 @@ export default function AccountPage() {
         <span className="mx-1.5">/</span>
         <span className="text-charcoal">Account</span>
       </nav>
+
+      <PricingReportBanner />
 
       <h1 className="text-2xl font-light text-charcoal mb-2">
         Hello, {user.firstName}
