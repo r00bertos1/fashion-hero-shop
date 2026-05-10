@@ -1,0 +1,23 @@
+src/lib/pricing-report/data.ts
+  s_1e262685ad2f20::t_9b1b5b7f6ed28c 1-122
+src/lib/pricing-report/types.ts
+  s_1e262685ad2f20::t_0bf5a68dfe1432 1-65
+src/lib/pricing-report/format.ts
+  s_1e262685ad2f20::t_b61544fd81f6b0 1-28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "9c6dab80e85b1a431098fdc3fbdc4bf449c39681",
+  "prompts": {},
+  "sessions": {
+    "s_1e262685ad2f20": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "721bb572-2c21-41e5-9311-544660f6e2d8",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "r00bertos1 <robertos19998@gmail.com>"
+    }
+  }
+}
