@@ -1,0 +1,19 @@
+public/pricing-report-placeholder.pdf
+  s_1e262685ad2f20::t_6c794768d1be68 1-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "feee82bc7550b94f44b3b613cc15a2731e444b45",
+  "prompts": {},
+  "sessions": {
+    "s_1e262685ad2f20": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "721bb572-2c21-41e5-9311-544660f6e2d8",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "r00bertos1 <robertos19998@gmail.com>"
+    }
+  }
+}
