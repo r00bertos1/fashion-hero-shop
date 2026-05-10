@@ -1,0 +1,20 @@
+src/components/pricing-report/sticky-tabs-nav.tsx
+  s_fecdd484243aba::t_714b29ee156e63 15-16,19,42-48,56-59,61-62,64-124
+  s_fecdd484243aba::t_b6ef9311808f48 63
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "ff0d20f50fb38afc16e260cbfd8c32237a038b81",
+  "prompts": {},
+  "sessions": {
+    "s_fecdd484243aba": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d15877bb-f384-404a-b6e6-0c0fb66f2c7e",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "r00bertos1 <robertos19998@gmail.com>"
+    }
+  }
+}
