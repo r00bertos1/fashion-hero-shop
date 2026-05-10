@@ -1,0 +1,21 @@
+src/components/pricing-report/kpi-cards.tsx
+  s_1e262685ad2f20::t_b1aacc22e7faa5 1-31
+src/components/pricing-report/margin-chart.tsx
+  s_1e262685ad2f20::t_cbe763566a1974 1-65
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "4831178acc1585f71bece50c65ab9d87e9e05ee7",
+  "prompts": {},
+  "sessions": {
+    "s_1e262685ad2f20": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "721bb572-2c21-41e5-9311-544660f6e2d8",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "r00bertos1 <robertos19998@gmail.com>"
+    }
+  }
+}
