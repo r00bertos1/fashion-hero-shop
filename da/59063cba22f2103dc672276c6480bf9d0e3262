@@ -1,0 +1,19 @@
+docs/superpowers/plans/2026-05-10-pricing-report-demo.md
+  s_d0c7f8e0a02e17::t_243ca8dd7f0c87 1-2230
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "da59063cba22f2103dc672276c6480bf9d0e3262",
+  "prompts": {},
+  "sessions": {
+    "s_d0c7f8e0a02e17": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f7b2ca3-9cd6-4cb3-98fd-ede16407c8fb",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "r00bertos1 <robertos19998@gmail.com>"
+    }
+  }
+}
