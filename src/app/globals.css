@@ -148,3 +148,51 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Pricing-report preview: bars grow from the baseline on first paint */
+@keyframes pr-bar-grow {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+.pr-bar {
+  transform-origin: bottom;
+  animation: pr-bar-grow 600ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: var(--pr-bar-delay, 0ms);
+}
+@media (prefers-reduced-motion: reduce) {
+  .pr-bar { animation: none; }
+}
+
+/* Subtle live-data dot pulse */
+@keyframes pr-livedot {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.45; }
+}
+.pr-livedot {
+  animation: pr-livedot 2.8s ease-in-out infinite;
+}
+
+/* Idle drift on the tilted shadow card behind the preview */
+@keyframes pr-tilt-drift {
+  0%, 100% { transform: rotate(-1.5deg) translateY(20px); }
+  50%      { transform: rotate(-2deg)   translateY(22px); }
+}
+.pr-tilt-drift {
+  animation: pr-tilt-drift 8s ease-in-out infinite;
+}
+
+/* How-it-works connecting line — grows L→R when its container is in view */
+@keyframes pr-line-grow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+.pr-line-grow {
+  transform-origin: left;
+  animation: pr-line-grow 900ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pr-livedot,
+  .pr-tilt-drift,
+  .pr-line-grow { animation: none; }
+}
