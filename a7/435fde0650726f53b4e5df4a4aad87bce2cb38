@@ -1,0 +1,27 @@
+src/lib/pricing-report/use-demo-entry.ts
+  s_33c31bcfe914a5::t_0216250ae8c791 4
+  s_33c31bcfe914a5::t_f9cf51d183d963 48
+README.md
+  s_33c31bcfe914a5::t_b0a3d87e2faa9a 129
+  s_33c31bcfe914a5::t_d7dd18c21bcf52 88-90,97-99,105-128,130,139
+src/components/pricing-report/banner.tsx
+  s_33c31bcfe914a5::t_0b95c17f3ac3f1 4,10-19,35
+instrumentation-client.ts
+  s_33c31bcfe914a5::t_5f18a60d3b71db 3-5,11-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "a7435fde0650726f53b4e5df4a4aad87bce2cb38",
+  "prompts": {},
+  "sessions": {
+    "s_33c31bcfe914a5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5ce0db3a-47dd-4b66-ace4-c1246416a07f",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "r00bertos1 <robertos19998@gmail.com>"
+    }
+  }
+}
