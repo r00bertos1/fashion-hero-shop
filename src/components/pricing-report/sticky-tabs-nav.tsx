@@ -85,7 +85,7 @@ export function StickyTabsNav({ tabs }: Props) {
 
       <nav
         aria-label="Sekcje raportu"
-        className={`hidden min-[1400px]:flex fixed top-32 z-30 flex-col bg-white border border-black/10 transition-all duration-300 ${scrolled ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4 pointer-events-none'}`}
+        className={`hidden min-[1400px]:flex fixed top-32 z-30 flex-col bg-white border border-black/10 transition-all duration-300 ${scrolled ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4 pointer-events-none invisible'}`}
         style={{ left: 'max(1rem, calc((100vw - 72rem) / 2 - 152px))', width: '128px' }}
       >
         <ul className="flex flex-col">
