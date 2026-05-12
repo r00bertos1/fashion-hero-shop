@@ -10,6 +10,7 @@ interface User {
 
 interface AuthContextValue {
   user: User | null;
+  isHydrated: boolean;
   login: (email: string, password: string) => Promise<void>;
   register: (data: { email: string; password: string; firstName: string; lastName: string }) => Promise<void>;
   logout: () => void;
@@ -21,6 +22,7 @@ const STORAGE_KEY = "stepforward_user";
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
+  const [isHydrated, setIsHydrated] = useState(false);
 
   useEffect(() => {
     try {
@@ -31,6 +33,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     } catch {
       // ignore parse errors
     }
+    setIsHydrated(true);
   }, []);
 
   const login = useCallback(async (email: string, _password: string) => {
@@ -60,7 +63,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, login, register, logout }}>
+    <AuthContext.Provider value={{ user, isHydrated, login, register, logout }}>
       {children}
     </AuthContext.Provider>
   );

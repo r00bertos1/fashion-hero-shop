@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useAuth } from "@/components/auth-provider";
 import { PricingReportBanner } from "@/components/pricing-report/banner";
+import { useDemoEntry } from "@/lib/pricing-report/use-demo-entry";
 
 const mockOrders = [
   { id: "SF-10042", date: "March 15, 2026", status: "Delivered", total: 592 },
@@ -13,24 +14,35 @@ const mockOrders = [
 ];
 
 export default function AccountPage() {
-  const { user, logout } = useAuth();
+  const { user, isHydrated, logout } = useAuth();
   const router = useRouter();
+  const { ready, isDemoSession } = useDemoEntry();
 
   useEffect(() => {
+    if (!ready || !isHydrated) return;
     if (!user) {
       router.push("/account/login");
     }
-  }, [user, router]);
+  }, [ready, isHydrated, user, router]);
 
+  if (!ready || !isHydrated) return null;
   if (!user) return null;
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-16">
       {/* Breadcrumb */}
-      <nav className="text-[11px] text-warm-gray mb-8 tracking-wide">
-        <Link href="/" className="hover:text-charcoal transition-colors">Home</Link>
-        <span className="mx-1.5">/</span>
-        <span className="text-charcoal">Account</span>
+      <nav className="mb-8 flex items-center gap-3 text-[11px] tracking-wide text-warm-gray">
+        <div>
+          <Link href="/" className="hover:text-charcoal transition-colors">Home</Link>
+          <span className="mx-1.5">/</span>
+          <span className="text-charcoal">Account</span>
+        </div>
+        {isDemoSession ? (
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-charcoal/15 bg-stone-50 px-2 py-0.5 text-[10px] tracking-[0.08em] uppercase text-warm-gray">
+            <span className="h-1.5 w-1.5 rounded-full bg-warm-gray" />
+            Demo · konto testowe
+          </span>
+        ) : null}
       </nav>
 
       <PricingReportBanner />
