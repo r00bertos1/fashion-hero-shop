@@ -60,7 +60,7 @@ export function StickyTabsNav({ tabs }: Props) {
   return (
     <>
       <nav
-        className={`sticky top-14 z-20 bg-white border-b border-black/10 -mx-4 px-4 transition-opacity duration-200 ${scrolled ? 'min-[1400px]:opacity-0 min-[1400px]:pointer-events-none' : ''}`}
+        className={`sticky top-14 z-20 bg-white border-b border-black/10 -mx-4 px-4 transition-opacity duration-200 ${scrolled ? 'min-[1400px]:opacity-0 min-[1400px]:pointer-events-none min-[1400px]:invisible' : ''}`}
       >
         <ul className="flex gap-6 overflow-x-auto whitespace-nowrap text-sm py-3">
           {tabs.map(t => {
