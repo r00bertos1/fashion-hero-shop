@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import posthog from 'posthog-js'
 import { useAuth } from '@/components/auth-provider'
 import { useSubscription } from './use-subscription'
 
@@ -44,6 +45,7 @@ export function useDemoEntry(): DemoEntryState {
         url.searchParams.delete(DEMO_QUERY_PARAM)
         window.history.replaceState({}, '', url.toString())
         window.sessionStorage.setItem(DEMO_SESSION_FLAG, '1')
+        posthog.register({ demo_mode: true })
       }
 
       if (cancelled) return
