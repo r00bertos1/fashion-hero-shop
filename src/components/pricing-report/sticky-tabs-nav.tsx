@@ -115,7 +115,7 @@ export function StickyTabsNav({ tabs }: Props) {
         type="button"
         onClick={scrollToTop}
         aria-label="Wróć na górę"
-        className={`fixed bottom-6 right-6 z-30 w-11 h-11 flex items-center justify-center bg-charcoal text-white rounded-full shadow-lg hover:bg-charcoal/90 transition-all duration-300 ${scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}
+        className={`fixed bottom-6 right-6 z-30 w-11 h-11 flex items-center justify-center bg-charcoal text-white rounded-full shadow-lg hover:bg-charcoal/90 transition-all duration-300 ${scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none invisible'}`}
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
           <path d="M12 19V5M5 12l7-7 7 7" strokeLinecap="round" strokeLinejoin="round" />
