@@ -1,6 +1,18 @@
+'use client'
+
 import Link from 'next/link'
+import { useEffect } from 'react'
+import posthog from 'posthog-js'
 
 export default function SuccessPage() {
+  useEffect(() => {
+    posthog.capture('pricing_report_subscription_activated', {
+      plan: 'pricing_report_monthly',
+      price: 49,
+      currency: 'PLN',
+    })
+  }, [])
+
   return (
     <div className="max-w-xl mx-auto px-4 py-24 text-center">
       <div className="mx-auto w-16 h-16 rounded-full bg-charcoal text-white flex items-center justify-center text-3xl mb-8">

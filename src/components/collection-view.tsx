@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
+import posthog from "posthog-js";
 import { FilterSidebar, type GenderFilter, type PriceRange } from "@/components/filter-sidebar";
 import { ProductCard } from "@/components/product-card";
 import { ChevronDownIcon, CloseIcon } from "@/components/icons";
@@ -23,6 +24,13 @@ interface CollectionViewProps {
 }
 
 export function CollectionView({ products, collectionName, initialSellerSlug }: CollectionViewProps) {
+  useEffect(() => {
+    posthog.capture("collection_viewed", {
+      collection_name: collectionName,
+      product_count: products.length,
+    });
+  }, [collectionName, products.length]);
+
   const [gender, setGender] = useState<GenderFilter>("all");
   const [sort, setSort] = useState<SortOption>("featured");
   const [priceRange, setPriceRange] = useState<PriceRange>("all");

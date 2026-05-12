@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useMemo } from "react";
 import Link from "next/link";
+import posthog from "posthog-js";
 import { CloseIcon, SearchIcon } from "./icons";
 import { products } from "@/data/products";
 
@@ -64,7 +65,18 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
               ref={inputRef}
               type="text"
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={(e) => {
+                const newQuery = e.target.value;
+                setQuery(newQuery);
+                if (newQuery.trim().length >= 2) {
+                  const q = newQuery.toLowerCase();
+                  const matchCount = products.filter((p) => p.name.toLowerCase().includes(q)).length;
+                  posthog.capture("search_performed", {
+                    query: newQuery.trim(),
+                    result_count: Math.min(matchCount, 6),
+                  });
+                }
+              }}
               placeholder="Search for shoes..."
               className="flex-1 text-base text-charcoal placeholder:text-warm-gray outline-none bg-transparent"
             />

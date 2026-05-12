@@ -61,7 +61,12 @@ export default async function ProductPage({ params }: PageProps) {
       <RelatedProducts products={related} />
 
       {/* Recently viewed */}
-      <RecentlyViewedSection productId={product.id} />
+      <RecentlyViewedSection
+        productId={product.id}
+        productName={product.name}
+        productCategory={product.category}
+        productPrice={product.price}
+      />
     </main>
   );
 }

@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import posthog from 'posthog-js'
 import { useSubscription } from '@/lib/pricing-report/use-subscription'
 
 const features = [
@@ -19,6 +20,11 @@ export default function CheckoutPage() {
 
   async function handlePay() {
     setIsLoading(true)
+    posthog.capture('pricing_report_subscription_started', {
+      plan: 'pricing_report_monthly',
+      price: 49,
+      currency: 'PLN',
+    })
     await new Promise(r => setTimeout(r, 800))
     activate()
     router.push('/pricing-report/success')

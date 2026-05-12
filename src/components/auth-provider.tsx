@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState, useEffect, useCallback } from "react";
+import posthog from "posthog-js";
 
 interface User {
   email: string;
@@ -45,6 +46,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(newUser));
     setUser(newUser);
+    posthog.identify(email, { email, firstName: newUser.firstName });
+    posthog.capture("user_logged_in", { email });
   }, []);
 
   const register = useCallback(async (data: { email: string; password: string; firstName: string; lastName: string }) => {
@@ -55,9 +58,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(newUser));
     setUser(newUser);
+    posthog.identify(data.email, { email: data.email, firstName: data.firstName, lastName: data.lastName });
+    posthog.capture("user_registered", { email: data.email, firstName: data.firstName, lastName: data.lastName });
   }, []);
 
   const logout = useCallback(() => {
+    posthog.capture("user_logged_out");
+    posthog.reset();
     localStorage.removeItem(STORAGE_KEY);
     setUser(null);
   }, []);
