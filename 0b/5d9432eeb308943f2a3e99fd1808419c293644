@@ -1,0 +1,27 @@
+src/app/account/page.tsx
+  s_33c31bcfe914a5::t_cf83441bc9a8a5 8,17,19,22,26,28,34-45
+src/app/demo/page.tsx
+  s_33c31bcfe914a5::t_c8673210299e78 1-58
+src/lib/pricing-report/use-demo-entry.ts
+  s_33c31bcfe914a5::t_6e670f16eeb002 1-71
+src/components/auth-provider.tsx
+  s_33c31bcfe914a5::t_f20945b4f9ff8c 66
+  s_33c31bcfe914a5::t_b53d1034448f56 13
+  s_33c31bcfe914a5::t_dc4716dbe996b0 25,36
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "0b5d9432eeb308943f2a3e99fd1808419c293644",
+  "prompts": {},
+  "sessions": {
+    "s_33c31bcfe914a5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5ce0db3a-47dd-4b66-ace4-c1246416a07f",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "r00bertos1 <robertos19998@gmail.com>"
+    }
+  }
+}
