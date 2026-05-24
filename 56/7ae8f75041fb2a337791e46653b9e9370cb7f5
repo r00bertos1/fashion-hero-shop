@@ -1,0 +1,21 @@
+docs/superpowers/specs/2026-05-24-pricing-report-price-ab-email-capture-design.md
+  s_36af4adb376f53::t_e48f8dbeff64eb 58-59
+  s_36af4adb376f53::t_0e5c78bad7ab8e 1-57,60-66,74-192
+  s_36af4adb376f53::t_00d405c05b3f2f 67-73
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.0",
+  "base_commit_sha": "567ae8f75041fb2a337791e46653b9e9370cb7f5",
+  "prompts": {},
+  "sessions": {
+    "s_36af4adb376f53": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ddd82d83-8cae-40d3-a5e8-c19185c3322c",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "r00bertos1 <robertos19998@gmail.com>"
+    }
+  }
+}
