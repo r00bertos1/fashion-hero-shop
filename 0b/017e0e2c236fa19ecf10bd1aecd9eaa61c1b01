@@ -1,0 +1,19 @@
+src/lib/pricing-report/price-variant-provider.tsx
+  s_f6ae1a7bd191f1::t_be1d456a22c4c2 1-74
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.0",
+  "base_commit_sha": "0b017e0e2c236fa19ecf10bd1aecd9eaa61c1b01",
+  "prompts": {},
+  "sessions": {
+    "s_f6ae1a7bd191f1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "41bf8467-cefb-4d2c-b3ae-fbf313f193ad",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "r00bertos1 <robertos19998@gmail.com>"
+    }
+  }
+}
