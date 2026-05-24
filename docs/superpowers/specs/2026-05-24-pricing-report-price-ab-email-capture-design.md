@@ -25,8 +25,8 @@ willingness to pay for a "Competitor Pricing Report". No real payment (no Stripe
 - **Keep the simulated subscription activation** after email capture so the user can still preview
   the report panel.
 - **Official `@supabase/supabase-js` client** (teaching template; standard path).
-- **Provisioning done by the agent** via Supabase + Vercel MCP (table + env vars), not a manual
-  checklist. Exception: the PostHog multivariate flag is created manually in the PostHog UI.
+- **Provisioning done by the agent** via MCP, not a manual checklist: Supabase table (Supabase MCP),
+  env vars (Vercel MCP), and the PostHog multivariate flag (PostHog MCP).
 
 ## A. Price: single source of truth
 
@@ -159,11 +159,12 @@ lost on a return visit. The funnel filter is configured in the **PostHog UI** (n
 > `$pageview /pricing-report/success`, filtered by `utm_source = outreach` **AND** `demo_mode != true`.
 > **Primary metric** = unique `pricing_report_email_captured` ÷ unique on `/account`.
 
-## E. Manual step (cannot be automated — no PostHog MCP)
+## E. PostHog feature flag (provisioned by the agent via PostHog MCP)
 
 Create a PostHog **multivariate** feature flag `pricing-report-price` with three variants:
-`price-99`, `price-149`, `price-199` (even rollout). Until it exists, organic visitors default to
-149; outreach links via `?price=` are unaffected.
+`price-99`, `price-149`, `price-199` (even ~33/33/34 rollout), enabled for all users. The code
+maps variant key → price via `FLAG_VARIANTS` (section A). Until the flag returns a value, organic
+visitors default to 149; outreach links via `?price=` are unaffected by the flag.
 
 ## Testing
 
@@ -188,5 +189,6 @@ Create a PostHog **multivariate** feature flag `pricing-report-price` with three
 | `src/app/pricing-report/success/page.tsx` | price from hook on event |
 | `landing/hero.tsx`, `landing/offer-card.tsx`, `landing/sticky-cta.tsx`, `pricing-report/banner.tsx` | price from hook (display + banner event) |
 | `package.json` | add `@supabase/supabase-js` |
-| Supabase | `pricing_report_leads` table (via MCP) |
-| Vercel/`.env.local` | `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` (via MCP) |
+| Supabase | `pricing_report_leads` table (via Supabase MCP) |
+| Vercel/`.env.local` | `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` (via Vercel MCP) |
+| PostHog | multivariate flag `pricing-report-price` (via PostHog MCP) |
