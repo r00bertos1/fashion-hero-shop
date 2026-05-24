@@ -3,12 +3,14 @@
 import Link from 'next/link'
 import { motion, useReducedMotion } from 'motion/react'
 import { CALM_EASE } from '@/lib/pricing-report/motion-config'
+import { usePriceVariant } from '@/lib/pricing-report/price-variant-provider'
 
 const HEADLINE_WORDS = ['Przestań', 'ręcznie', 'śledzić', 'ceny', 'konkurencji'] as const
 
 export function LandingHero() {
   const reduceMotion = useReducedMotion()
   const wordStagger = reduceMotion ? 0 : 0.06
+  const { price } = usePriceVariant()
 
   return (
     <section className="relative overflow-hidden bg-stone-100 px-4 py-20 md:py-28">
@@ -70,7 +72,7 @@ export function LandingHero() {
             href="/pricing-report/checkout"
             className="inline-flex items-center justify-center bg-charcoal text-white px-8 py-4 rounded-full text-sm tracking-wide hover:bg-charcoal/90 transition-colors"
           >
-            Zamów raport – 49 PLN/mies
+            Zamów raport – {price} PLN/mies
           </Link>
           <p className="text-xs text-warm-gray mt-4">
             Dostęp aktywowany natychmiast po płatności. Pierwszy raport otrzymasz w ciągu 24h.

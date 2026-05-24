@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Mail, Shield, XCircle } from 'lucide-react'
 import { motion } from 'motion/react'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/pricing-report/motion-config'
+import { usePriceVariant } from '@/lib/pricing-report/price-variant-provider'
 
 const features = [
   {
@@ -31,6 +32,8 @@ const trustBadges = [
 ] as const
 
 export function LandingOfferCard() {
+  const { price } = usePriceVariant()
+
   return (
     <section className="bg-stone-100 px-4 py-20">
       <div className="max-w-3xl mx-auto">
@@ -70,7 +73,7 @@ export function LandingOfferCard() {
           {/* Price / CTA block — tonal shift to anchor the eye */}
           <div className="border-t border-black/5 bg-stone-50/60 px-8 md:px-12 py-10 text-center">
             <p className="text-5xl font-light text-charcoal mb-1">
-              49 <span className="text-lg text-warm-gray">PLN / mies</span>
+              {price} <span className="text-lg text-warm-gray">PLN / mies</span>
             </p>
             <p className="text-xs text-warm-gray mb-7">
               Faktura VAT · Anulujesz kiedy chcesz

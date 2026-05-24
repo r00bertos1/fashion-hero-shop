@@ -3,15 +3,18 @@
 import Link from 'next/link'
 import { useEffect } from 'react'
 import posthog from 'posthog-js'
+import { usePriceVariant } from '@/lib/pricing-report/price-variant-provider'
 
 export default function SuccessPage() {
+  const { price, currency, planKey } = usePriceVariant()
+
   useEffect(() => {
     posthog.capture('pricing_report_subscription_activated', {
-      plan: 'pricing_report_monthly',
-      price: 49,
-      currency: 'PLN',
+      plan: planKey,
+      price,
+      currency,
     })
-  }, [])
+  }, [price, currency, planKey])
 
   return (
     <div className="max-w-xl mx-auto px-4 py-24 text-center">
