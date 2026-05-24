@@ -3,17 +3,19 @@
 import Link from 'next/link'
 import posthog from 'posthog-js'
 import { useSubscription } from '@/lib/pricing-report/use-subscription'
+import { usePriceVariant } from '@/lib/pricing-report/price-variant-provider'
 
 export function PricingReportBanner() {
   const { isHydrated, isActive } = useSubscription()
+  const { price, currency, planKey } = usePriceVariant()
   if (!isHydrated || isActive) return null
 
   function handleBannerClick() {
     posthog.capture('pricing_report_banner_clicked', {
       surface: 'account_panel',
-      plan: 'pricing_report_monthly',
-      price: 49,
-      currency: 'PLN',
+      plan: planKey,
+      price,
+      currency,
     })
   }
 
@@ -24,7 +26,7 @@ export function PricingReportBanner() {
       </span>
       <div className="flex-1">
         <p className="text-charcoal font-medium mb-1">
-          Raport cen konkurencji — 49 PLN/mies
+          Raport cen konkurencji — {price} PLN/mies
         </p>
         <p className="text-charcoal/70 text-sm">
           Codzienny monitoring 100 produktów + 5 konkurentów. Co tydzień gotowe rekomendacje cenowe.

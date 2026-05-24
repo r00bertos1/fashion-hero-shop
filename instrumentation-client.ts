@@ -1,7 +1,13 @@
 import posthog from "posthog-js";
+import { VARIANT_COOKIE, parseVariant } from "@/lib/pricing-report/pricing";
 
 // Keep in sync with DEMO_SESSION_FLAG in src/lib/pricing-report/use-demo-entry.ts.
 const DEMO_SESSION_FLAG = "pricing-report:demo-mode";
+
+function readPriceVariantCookie(): number | null {
+  const match = document.cookie.match(new RegExp(`(?:^|;\\s*)${VARIANT_COOKIE}=(\\d+)`));
+  return match ? parseVariant(match[1]) : null;
+}
 
 posthog.init(process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN!, {
   api_host: "/ingest",
@@ -13,8 +19,12 @@ posthog.init(process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN!, {
       if (window.sessionStorage.getItem(DEMO_SESSION_FLAG) === "1") {
         posthog.register({ demo_mode: true });
       }
+      const price = readPriceVariantCookie();
+      if (price != null) {
+        posthog.register({ price });
+      }
     } catch {
-      // sessionStorage may be blocked (privacy mode, embedded contexts) — non-fatal.
+      // sessionStorage / cookies may be blocked (privacy mode, embedded contexts) — non-fatal.
     }
   },
 });

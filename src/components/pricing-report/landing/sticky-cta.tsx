@@ -5,11 +5,13 @@ import Link from 'next/link'
 import { AnimatePresence, motion } from 'motion/react'
 import { useSubscription } from '@/lib/pricing-report/use-subscription'
 import { CALM_EASE } from '@/lib/pricing-report/motion-config'
+import { usePriceVariant } from '@/lib/pricing-report/price-variant-provider'
 
 const SHOW_AT_SCROLL_PX = 480
 
 export function LandingStickyCta() {
   const { isHydrated, isActive } = useSubscription()
+  const { price } = usePriceVariant()
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -41,7 +43,7 @@ export function LandingStickyCta() {
                 Raport cen konkurencji
               </p>
               <p className="text-sm font-medium text-charcoal truncate">
-                49 PLN / mies · Anulujesz kiedy chcesz
+                {price} PLN / mies · Anulujesz kiedy chcesz
               </p>
             </div>
             <Link
