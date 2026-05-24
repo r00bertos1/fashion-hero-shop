@@ -1,0 +1,20 @@
+instrumentation-client.ts
+  s_f6ae1a7bd191f1::t_fbb3996a2f14da 5-8,10-13,25-28,30
+  s_f6ae1a7bd191f1::t_9a255d5077f82f 9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.0",
+  "base_commit_sha": "619d1d90efe7c1c88aac754144b97bdc0ea7767d",
+  "prompts": {},
+  "sessions": {
+    "s_f6ae1a7bd191f1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "41bf8467-cefb-4d2c-b3ae-fbf313f193ad",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": null
+    }
+  }
+}
