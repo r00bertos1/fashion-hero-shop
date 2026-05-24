@@ -18,7 +18,7 @@ willingness to pay for a "Competitor Pricing Report". No real payment (no Stripe
 ## Decisions (locked)
 
 - **Lead storage:** Supabase table `pricing_report_leads`, written from a server API route.
-- **Price source-of-truth precedence:** `?price` URL param → PostHog flag → default 149.
+- **Price source-of-truth precedence:** fresh `?price` URL param → persisted `pr_variant` cookie → PostHog flag → default 149.
 - **Variant must be invisible to the user:** the `?price` param is stripped from the URL via a
   middleware redirect before the page renders; only the price number is ever shown — never a
   "variant" label.

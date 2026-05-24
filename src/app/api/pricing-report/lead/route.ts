@@ -22,6 +22,12 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'invalid_price' }, { status: 400 })
   }
 
+  // Demo traffic must never create a real lead row. The checkout client already
+  // skips this call for demo sessions; this is the server-side guarantee.
+  if (demoMode === true) {
+    return NextResponse.json({ ok: true, skipped: 'demo_mode' })
+  }
+
   const url = process.env.SUPABASE_URL
   const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
   if (!url || !serviceKey) {

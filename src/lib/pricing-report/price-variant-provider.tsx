@@ -48,9 +48,15 @@ export function PriceVariantProvider({
 
   useEffect(() => {
     if (hasCookie.current) return
+    // Pin the variant on the FIRST flag resolution. onFeatureFlags fires on every
+    // flag reload, so without this guard a later re-evaluation could flip the
+    // price (and the shown offer) mid-session.
+    let resolved = false
     function resolveFromFlag() {
+      if (resolved) return
       const fromFlag = priceFromFlag(posthog.getFeatureFlag(FLAG_KEY))
       if (fromFlag != null) {
+        resolved = true
         setPrice(fromFlag)
         persistVariant(fromFlag)
       }

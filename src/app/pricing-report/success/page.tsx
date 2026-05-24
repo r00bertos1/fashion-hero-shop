@@ -1,14 +1,19 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import posthog from 'posthog-js'
 import { usePriceVariant } from '@/lib/pricing-report/price-variant-provider'
 
 export default function SuccessPage() {
   const { price, currency, planKey } = usePriceVariant()
+  const captured = useRef(false)
 
   useEffect(() => {
+    // Fire activation exactly once; price may settle after mount when the flag
+    // resolves, and we must not emit duplicate subscription_activated events.
+    if (captured.current) return
+    captured.current = true
     posthog.capture('pricing_report_subscription_activated', {
       plan: planKey,
       price,
