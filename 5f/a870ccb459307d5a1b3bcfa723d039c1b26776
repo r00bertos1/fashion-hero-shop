@@ -1,0 +1,19 @@
+docs/superpowers/plans/2026-05-24-pricing-report-price-ab-email-capture.md
+  s_36af4adb376f53::t_0dda7d0766d224 1-1105
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.0",
+  "base_commit_sha": "5fa870ccb459307d5a1b3bcfa723d039c1b26776",
+  "prompts": {},
+  "sessions": {
+    "s_36af4adb376f53": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ddd82d83-8cae-40d3-a5e8-c19185c3322c",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "r00bertos1 <robertos19998@gmail.com>"
+    }
+  }
+}
