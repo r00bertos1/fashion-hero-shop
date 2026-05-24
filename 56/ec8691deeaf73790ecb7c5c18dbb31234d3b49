@@ -1,0 +1,27 @@
+src/app/api/pricing-report/lead/route.ts
+  s_f6ae1a7bd191f1::t_7a293dca598980 25-30
+docs/superpowers/specs/2026-05-24-pricing-report-price-ab-email-capture-design.md
+  s_f6ae1a7bd191f1::t_6f8188cef4fc69 21
+src/app/pricing-report/success/page.tsx
+  s_f6ae1a7bd191f1::t_5d4ffe1a267f47 4,10,13-16
+src/lib/pricing-report/price-variant-provider.tsx
+  s_f6ae1a7bd191f1::t_0aeb758c151e9d 51-54,56,59
+instrumentation-client.ts
+  s_f6ae1a7bd191f1::t_b8ec75136969fa 2,9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.0",
+  "base_commit_sha": "56ec8691deeaf73790ecb7c5c18dbb31234d3b49",
+  "prompts": {},
+  "sessions": {
+    "s_f6ae1a7bd191f1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "41bf8467-cefb-4d2c-b3ae-fbf313f193ad",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "r00bertos1 <robertos19998@gmail.com>"
+    }
+  }
+}
