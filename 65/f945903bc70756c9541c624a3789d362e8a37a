@@ -1,0 +1,21 @@
+package.json
+  s_f6ae1a7bd191f1::t_1c0d3de0068c55 14
+src/app/api/pricing-report/lead/route.ts
+  s_f6ae1a7bd191f1::t_7df33a190d297c 1-51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.0",
+  "base_commit_sha": "65f945903bc70756c9541c624a3789d362e8a37a",
+  "prompts": {},
+  "sessions": {
+    "s_f6ae1a7bd191f1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "41bf8467-cefb-4d2c-b3ae-fbf313f193ad",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "r00bertos1 <robertos19998@gmail.com>"
+    }
+  }
+}
