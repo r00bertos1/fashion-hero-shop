@@ -1,0 +1,22 @@
+vitest.config.mts
+  s_f6ae1a7bd191f1::t_2243e3bc6c0875 1-8
+package.json
+  s_f6ae1a7bd191f1::t_ccd3af524c4a07 38-39
+  s_f6ae1a7bd191f1::t_3e762c5ecf2af6 9-10
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.0",
+  "base_commit_sha": "015025c96c5d657ac98b5f901d03c9c4751acb1a",
+  "prompts": {},
+  "sessions": {
+    "s_f6ae1a7bd191f1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "41bf8467-cefb-4d2c-b3ae-fbf313f193ad",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "r00bertos1 <robertos19998@gmail.com>"
+    }
+  }
+}
