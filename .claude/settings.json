@@ -1,0 +1,8 @@
+{
+  "enabledPlugins": {
+    "posthog@claude-plugins-official": true
+  },
+  "worktree": {
+    "baseRef": "head"
+  }
+}
